@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h3 style="color:orange">User Registration</h3>
+<form action="/userregister/" method="POST">
+                                    {% csrf_token %}
+    <center>
+                                    <table>
+                                          <tr><td style="color:yellow">Login name</td><td >{{form.name}}</td></tr>
+                                            <tr><td style="color:yellow">Password</td><td>{{form.passwd}}</td></tr>
+                                            <tr><td style="color:yellow">confirmPassword</td><td>{{form.cwpasswd}}</td></tr>
+                                            <tr><td style="color:yellow">Email</td><td>{{form.mail}}</td></tr>
+                                            <tr><td style="color:yellow">Mobile</td><td>{{form.mobileno}}</td></tr>
+                                            <tr><td style="color:yellow">qualification</td><td>{{form.qualification}}</td></tr>
+                                            <tr><td></td><td style="color:yellow">{{form.status}}</td></tr>
+                                    </table>
+        </center>
+                                <input style="color:red" type="submit" value="submit">
+
+                                </form>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+{% endblock %}

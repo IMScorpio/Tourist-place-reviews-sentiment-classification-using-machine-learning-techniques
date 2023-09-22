@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div>
+
+        <h2 style="color:black">User Login</h2>
+    <form action="/userlogincheck/" method="POST">
+                                 {% csrf_token %}
+        <center>
+                                <table><tr><td style="color:black">
+                                  <input  type="text" name="uname" placeholder="User Name" ><br/><br/>
+                                    <input  type="password" name="upasswd" placeholder="Password" ><br/><br/>
+                                    </td></tr></table> <button  type="submit" style="color:#FF4500">Login</button><br/>
+            </center>
+                                <br><br><p>New Customer Register Here ?<a href="{% url 'userregister' %}" style="color:yellow">Click Here register</a></p>
+                            </form> </h3>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+</div>
+    {% endblock %}

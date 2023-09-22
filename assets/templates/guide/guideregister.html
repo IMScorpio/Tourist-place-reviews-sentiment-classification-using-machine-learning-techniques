@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div>
+
+        <h3 style="color:black">Guide Registration</h3>
+    <form action="/guideregister/" method="POST">
+                                    {% csrf_token %}
+        <center>
+                                    <table>
+                                          <tr><td style="color:orange">Login name</td><td >{{form.name}}</td></tr>
+                                            <tr><td style="color:orange">Password</td><td>{{form.passwd}}</td></tr>
+                                            <tr><td style="color:orange">confirmPassword</td><td>{{form.cwpasswd}}</td></tr>
+                                            <tr><td style="color:orange">Email</td><td>{{form.mail}}</td></tr>
+                                            <tr><td style="color:orange">Mobile</td><td>{{form.mobileno}}</td></tr>
+                                            <tr><td style="color:orange">location</td><td>{{form.location}}</td></tr>
+                                            <tr><td></td><td style="color:orange">{{form.status}}</td></tr>
+                                    </table>
+                                <input type="submit" value="submit">
+            </center>
+
+                                </form>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+
+</div>
+    {% endblock %}
+

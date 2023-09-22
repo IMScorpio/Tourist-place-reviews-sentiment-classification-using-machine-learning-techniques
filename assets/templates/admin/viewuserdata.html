@@ -1,0 +1,43 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+<div>
+
+       <!-- <h3>welcome to adminpage</h3>-->
+    <h2 style="color:black">View users details</h2>
+                            <table border="2px solid blue" align="center">
+                                  <tr><th style="color:red">name</th>
+                                    <th style="color:red">mail</th>
+                                    <th style="color:red">passwd</th>
+                                    <th style="color:red">cwpasswd</th>
+                                    <th style="color:red">qualification</th>
+                                    <th style="color:red">mobileno</th>
+                                    <th style="color:red">status</th>
+                                    <th style="color:red">activate</th>
+                                  </tr>
+
+                              {% for x in qs %}
+                                  <tr>
+                                    <td style="color:orange">{{x.name}}</td>
+                                    <td style="color:orange">{{x.mail}}</td>
+                                    <td style="color:orange">{{x.passwd}}</td>
+                                    <td style="color:orange">{{x.cwpasswd}}</td>
+                                    <td style="color:orange">{{x.qualification}}</td>
+                                    <td style="color:orange">{{x.mobileno}}</td>
+                                    <td style="color:orange">{{x.status}}</td>
+
+                                    {% if x.status == 'waiting' %}
+                                    <td style="color:orange"> <a href="/activateuser/?pid={{ x.id }}" >Activate</a></td>
+                                    {% else %}
+                                            <td style="color:orange"> Activated</td>
+                                            {% endif %}
+
+                                     </tr>
+                                    {% endfor %}
+
+                            </table>
+                            </div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div>
+
+        <h2 style="color:black">Guide login</h2>
+    <form action ="/guidelogincheck/" method="POST">
+                                 {% csrf_token %}
+                             <center>  <table><tr><td style="color:orange">
+                                <input  type="text" name="uname" placeholder="guide name" ><br/><br/>
+                                <input  type="password" name="upasswd" placeholder="Password" ><br/><br/>
+                                    </td></tr></table> <button  type="submit" style="color:#FF4500">Login</button><br/>
+        <br><br><p>New guide Register Here ?<a href="{% url 'guideregister' %}" style="color:yellow">Click Here register</a></p></center>
+                            </form> </h3>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+
+</div>
+    {% endblock %}
+

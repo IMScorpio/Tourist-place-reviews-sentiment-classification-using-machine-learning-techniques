@@ -1,0 +1,28 @@
+{% extends 'userbase.html' %}
+
+{% block contents %}
+<div>
+
+       <!-- <h3>welcome to userpage.</h3>-->
+
+    <form method="GET" action="{% url 'usersearchresult1' %}">
+                                    {% csrf_token %}
+        <center>
+                                    <table style="width:30%">
+                                         <tr>
+                                            <td><input type="text"  name="placename"> </td>
+                                            <td><input type="submit" value="Search"></td><br>
+                                             <P style="color:orange">we can search based upon placename</P>
+                                         </tr>
+                                    </table>
+            </center>
+                                </form>
+</div>
+    {% endblock %}
+
+
+
+
+
+
+

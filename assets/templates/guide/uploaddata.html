@@ -1,0 +1,21 @@
+{% extends 'guidebase.html' %}
+
+{% block contents %}
+<div>
+
+        <h3 style="color:black">Upload-Data</h3>
+     <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                    <center><br><br>
+                                      <table><tr><td style="color:yellow">{{form.as_p}}</td></tr>
+
+                                      </table>
+                                          <button type="submit">Save</button>
+
+                                    </center>
+                            </form>
+
+</div>
+    {% endblock %}
+
+

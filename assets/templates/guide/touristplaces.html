@@ -1,0 +1,13 @@
+{% extends 'userbase.html' %}
+{% load static %}
+{% block contents %}
+<div>
+    {% for x in obj %}
+    <table>
+
+        <tr><td><a href="/viewplaces/?id={{x.id}}&placename={{x.placename}}&information={{x.information}}&package={{x.package}}"><img src="{{x.file.url}}" style="width:10em;height:10em;"></a></td>
+        <tr><td style="color:black">{{x.placename}}</td></tr>
+    </table>
+    {% endfor %}
+</div>
+    {% endblock %}

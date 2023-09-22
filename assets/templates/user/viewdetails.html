@@ -1,0 +1,36 @@
+{% extends 'userbase.html' %}
+
+{% block contents %}
+<div>
+
+       <!-- <h3>welcome to userpage.</h3>-->
+     <form action="{% url 'viewplaces' %}" method="POST" enctype="multipart/form-data"  >
+    {% csrf_token %}
+        <table align="center" style="margin-top:10px;">
+                    <tr>
+                        <td colspan="3" align="center">
+                            <img src="{{image.url}}" style="width:5em;height:5em;">
+                        </td>
+
+                        <tr><td style="color:pink">placename</td>
+                        <td style="color:black">:</td>
+                        <td height="30px" style="color:black">{{tourism.placename}}</td></tr>
+                        <tr><td style="color:pink">package</td>
+                        <td style="color:black">:</td>
+                        <td height="30px" style="color:black">{{tourism.package}}</td></tr>
+                        <tr><td style="color:pink">Rating</td>
+                        <td style="color:black">:</td>
+                        <td height="30px" style="color:black">{{tourism.rating}}</td></tr>
+                        <tr><td style="color:pink">Review</td>
+                        <td style="color:black">:</td>
+                         <td height="30px" style="color:black">{{tourism.review}}</td></tr>
+                    </tr>
+            <tr>
+        <td  align="center"><input style="color:black" type="submit" name="submit"></td>
+    </tr>
+                </table>
+</form>
+
+</div>
+    {% endblock %}
+

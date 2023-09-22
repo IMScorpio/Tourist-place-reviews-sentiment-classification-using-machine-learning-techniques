@@ -1,0 +1,49 @@
+{% extends 'userbase.html' %}
+
+{% block contents %}
+<div>
+
+        <!--<h3>welcome to userpage..</h3>-->
+    <h2 style="color:black">View reviews </h2>
+                            <table border="2px solid blue" align="left">
+                                  <tr><th style="color:orange">placename</th>
+                                    <th style="color:orange">package</th>
+                                    <th style="color:orange">rating</th>
+                                    <th style="color:orange">review</th>
+
+                                  </tr>
+
+
+                                    {% for x in qs %}
+                                    <tr><th style="color:pink">{{x.placename}}</th>
+                                    <th style="color:pink">{{x.package}}</th>
+                                    <th style="color:pink">{{x.rating}}</th>
+                                    <th style="color:pink">{{x.review}}</th>
+                                    </tr>
+                                {% endfor%}
+                               <tr><th style="color:red">semantic:</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <td style="color:yellow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{sem}}</td></tr>
+                            </table>
+
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table border="2px solid red" align="right">
+                                <tr><th style="color:yellow">+ve reviews</th>
+
+                                {% for i in pt %}
+                                <tr><th style="color:yellow">{{ i }}</th>
+                                {% endfor %}
+                                </tr>
+                            </table>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table border="2px solid red" align="right" >
+                                <tr><th style="color:red">-ve reviews</th>
+
+                                {% for j in nt %}
+                                <tr><th style="color:red">{{ j }}</th>
+                                {% endfor %}
+                                </tr>
+                            </table>
+                                <!--<p>of Book Reviews using Unsuper
+
+</div>
+    {% endblock %}
+

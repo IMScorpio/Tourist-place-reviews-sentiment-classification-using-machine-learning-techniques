@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<center>
+    <h2 style="color:black"><b>Admin Login</b></h2>
+    <p>
+        <form action="{% url 'adminloginaction' %}"  method="POST" >
+                    {% csrf_token %}
+              <input  type="text" name="username" placeholder="Admin Login Id" ><br/><br/>
+               <input  type="password" name="password" placeholder="Password" ><br/><br/>
+                <button  type="submit">Login</button><br/>
+      <center>
+                  {% if messages %}
+                         {% for message in messages %}
+                            <font color='RED'> {{ message }}</font>
+                         {% endfor %}
+                  {% endif %}
+              </center>
+        </form>
+    </p>
+</center>
+
+    {% endblock %}
